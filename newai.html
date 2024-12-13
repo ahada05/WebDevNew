@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspiration & Laughter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #e0f7fa, #ffe082);
+            color: #003366;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #003366;
+            color: white;
+        }
+
+        .container {
+            margin: 50px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #003366;
+            color: white;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #005999;
+        }
+
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Inspiration & Laughter</h1>
+        <p>Click a button below to receive a boost of positivity or a dose of humor!</p>
+    </header>
+    <div class="container">
+        <button id="quoteBtn">Get an Inspirational Quote</button>
+        <button id="jokeBtn">Get a Joke</button>
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        // Arrays for quotes and jokes
+        const quotes = [
+            "Believe you can and you're halfway there.",
+            "Act as if what you do makes a difference. It does.",
+            "Success is not how high you have climbed, but how you make a positive difference to the world.",
+            "You are never too old to set another goal or to dream a new dream.",
+            "Happiness is not by chance, but by choice."
+        ];
+
+        const jokes = [
+            "Why don’t skeletons fight each other? They don’t have the guts.",
+            "What do you call fake spaghetti? An impasta.",
+            "Why don’t eggs tell jokes? They’d crack each other up.",
+            "Why couldn’t the bicycle stand up by itself? It was two-tired!",
+            "What did the ocean say to the beach? Nothing, it just waved."
+        ];
+
+        // Function to get a random item from an array
+        function getRandomItem(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        // Button click event listeners
+        document.getElementById('quoteBtn').addEventListener('click', () => {
+            document.getElementById('output').innerText = getRandomItem(quotes);
+        });
+
+        document.getElementById('jokeBtn').addEventListener('click', () => {
+            document.getElementById('output').innerText = getRandomItem(jokes);
+        });
+    </script>
+</body>
+</html>
